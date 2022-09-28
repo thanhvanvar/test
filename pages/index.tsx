@@ -4,6 +4,8 @@ import styles from '../styles/Home.module.css'
 
 export default function Index() {
 
+
+
     return (
         <>
             <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
@@ -509,6 +511,7 @@ export default function Index() {
                     </div>
                 </div>
             </section>
+
         </>
 
     )
