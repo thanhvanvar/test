@@ -9,7 +9,6 @@ export default function Index() {
             <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-
                         <Image
                             src="/assets/img/tuyen-dung/banner-1.png"
                             alt="Picture of the author"
@@ -47,7 +46,8 @@ export default function Index() {
                             <Image
                                 src="/assets/img/tuyen-dung/2-10-01.png"
                                 alt="Picture of the author"
-                                layout="responsive"
+                                placeholder="blur"
+                                blurDataURL="/assets/img/tuyen-dung/2-10-01.png"
                                 width={2177}
                                 height={1953}
                             />
@@ -56,10 +56,12 @@ export default function Index() {
                             <Image
                                 src="/assets/img/tuyen-dung/2-10-02.png"
                                 alt="Picture of the author"
-                                layout="responsive"
+                                placeholder="blur"
+                                blurDataURL="/assets/img/tuyen-dung/2-10-02.png"
                                 width={2418}
                                 height={1851}
                             />
+
                         </div>
 
                     </div>
@@ -92,7 +94,8 @@ export default function Index() {
                             <Image
                                 src="/assets/img/tuyen-dung/tuyen-dung-3.jpg"
                                 alt="Picture of the author"
-                                layout="responsive"
+                                placeholder="blur"
+                                blurDataURL="/assets/img/tuyen-dung/tuyen-dung-3.jpg"
                                 width={930}
                                 height={617}
                             />
@@ -117,10 +120,10 @@ export default function Index() {
                         </div>
                         <div className="col-md-4 m-0 col_two">
                             <Image
-
                                 src="/assets/img/tuyen-dung/2-10-04.png"
                                 alt="Picture of the author"
-                                layout="responsive"
+                                placeholder="blur"
+                                blurDataURL="/assets/img/tuyen-dung/2-10-04.png"
                                 width={743}
                                 height={672}
                             />
@@ -130,7 +133,8 @@ export default function Index() {
 
                                 src="/assets/img/tuyen-dung/2-10-03.png"
                                 alt="Picture of the author"
-                                layout="responsive"
+                                placeholder="blur"
+                                blurDataURL="/assets/img/tuyen-dung/2-10-03.png"
                                 width={746}
                                 height={685}
                             />
@@ -154,7 +158,8 @@ export default function Index() {
                             <Image
                                 src="/assets/img/tuyen-dung/2-01.png"
                                 alt="Picture of the author"
-                                layout="responsive"
+                                placeholder="blur"
+                                blurDataURL="/assets/img/tuyen-dung/2-01.png"
                                 width={1430}
                                 height={1536}
                             />
@@ -178,7 +183,8 @@ export default function Index() {
                             <Image
                                 src="/assets/img/tuyen-dung/2-02.png"
                                 alt="Picture of the author"
-                                layout="responsive"
+                                placeholder="blur"
+                                blurDataURL="/assets/img/tuyen-dung/2-02.png"
                                 width={1447}
                                 height={965}
                             />
@@ -209,7 +215,8 @@ export default function Index() {
                                 className={styles.img_one}
                                 src="/assets/img/tuyen-dung/2-04.png"
                                 alt="Picture of the author"
-                                layout="responsive"
+                                placeholder="blur"
+                                blurDataURL="/assets/img/tuyen-dung/2-04.png"
                                 width={800}
                                 height={385}
                             />
@@ -228,7 +235,8 @@ export default function Index() {
                             <Image
                                 src="/assets/img/tuyen-dung/s-7-1.png"
                                 alt="Picture of the author"
-                                layout="responsive"
+                                placeholder="blur"
+                                blurDataURL="/assets/img/tuyen-dung/s-7-1.png"
                                 width={265}
                                 height={361}
                             />
@@ -237,7 +245,8 @@ export default function Index() {
                             <Image
                                 src="/assets/img/tuyen-dung/s-7-3.png"
                                 alt="Picture of the author"
-                                layout="responsive"
+                                placeholder="blur"
+                                blurDataURL="/assets/img/tuyen-dung/s-7-3.png"
                                 width={994}
                                 height={764}
                             />
@@ -246,7 +255,8 @@ export default function Index() {
                             <Image
                                 src="/assets/img/tuyen-dung/s-7-2.png"
                                 alt="Picture of the author"
-                                layout="responsive"
+                                placeholder="blur"
+                                blurDataURL="/assets/img/tuyen-dung/s-7-2.png"
                                 width={607}
                                 height={647}
                             />
@@ -271,7 +281,8 @@ export default function Index() {
                             <Image
                                 src="/assets/img/tuyen-dung/s-9-1.png"
                                 alt="Picture of the author"
-                                layout="responsive"
+                                placeholder="blur"
+                                blurDataURL="/assets/img/tuyen-dung/s-9-1.png"
                                 width={748}
                                 height={649}
                             />
@@ -280,7 +291,8 @@ export default function Index() {
                             <Image
                                 src="/assets/img/tuyen-dung/s-9-2.png"
                                 alt="Picture of the author"
-                                layout="responsive"
+                                placeholder="blur"
+                                blurDataURL="/assets/img/tuyen-dung/s-9-2.png"
                                 width={1359}
                                 height={992}
                             />
@@ -356,7 +368,14 @@ export default function Index() {
                                     </div>
                                 </div>
                                 <div className="mx-auto col-md-8 col-lg-6 order-lg-last">
-                                    <img className="img-fluid" src="/assets/img/tuyen-dung/2-09.png" alt=""/>
+                                    <Image
+                                        src="/assets/img/tuyen-dung/2-09.png"
+                                        alt="Picture of the author"
+                                        placeholder="blur"
+                                        blurDataURL="/assets/img/tuyen-dung/2-09.png"
+                                        width={1671}
+                                        height={1254}
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -365,7 +384,14 @@ export default function Index() {
                         <div className="container">
                             <div className="row p-5">
                                 <div className="mx-auto col-md-8 col-lg-6 order-lg-last">
-                                    <img className="img-fluid" src="/assets/img/tuyen-dung/tuyen-dung-10.jpg" alt=""/>
+                                    <Image
+                                        src="/assets/img/tuyen-dung/tuyen-dung-10.jpg"
+                                        alt="Picture of the author"
+                                        placeholder="blur"
+                                        blurDataURL="/assets/img/tuyen-dung/tuyen-dung-10.jpg"
+                                        width={1931}
+                                        height={1085}
+                                    />
                                 </div>
                                 <div className="col-lg-6 mt-2 d-flex align-items-center">
                                     <div className="text-align-left">
@@ -381,7 +407,14 @@ export default function Index() {
                         <div className="container">
                             <div className="row p-5">
                                 <div className="mx-auto col-md-8 col-lg-6 order-lg-last">
-                                    <img className="img-fluid" src="/assets/img/tuyen-dung/tuyen-dung-11.jpg" alt=""/>
+                                    <Image
+                                        src="/assets/img/tuyen-dung/tuyen-dung-11.jpg"
+                                        alt="Picture of the author"
+                                        placeholder="blur"
+                                        blurDataURL="/assets/img/tuyen-dung/tuyen-dung-11.jpg"
+                                        width={1849}
+                                        height={1033}
+                                    />
                                 </div>
                                 <div className="col-lg-6 mt-2 d-flex align-items-center">
                                     <div className="text-align-left">
@@ -415,7 +448,15 @@ export default function Index() {
 
                         <div className="col-md-4 col-lg-4 pb-5">
                             <div className="h1 text-white text-center">
-                                <img className="img-fluid" src="/assets/img/tuyen-dung/icon_1.png" alt=""/>
+                                <Image
+                                    className="img-fluid"
+                                    src="/assets/img/tuyen-dung/icon_1.png"
+                                    alt="Picture of the author"
+                                    placeholder="blur"
+                                    blurDataURL="/assets/img/tuyen-dung/icon_1.png"
+                                    width={70}
+                                    height={70}
+                                />
                             </div>
                             <p className="text-white text-center fs-16">
                                 <strong>13 Đặng Tất, P. Tân Định</strong>
@@ -428,7 +469,15 @@ export default function Index() {
                         <div className="col-md-4 col-lg-4 pb-5">
 
                             <div className="h1 text-white text-center">
-                                <img className="img-fluid" src="/assets/img/tuyen-dung/icon_2.png" alt=""/>
+                                <Image
+                                    className="img-fluid"
+                                    src="/assets/img/tuyen-dung/icon_2.png"
+                                    alt="Picture of the author"
+                                    placeholder="blur"
+                                    blurDataURL="/assets/img/tuyen-dung/icon_2.png"
+                                    width={70}
+                                    height={70}
+                                />
                             </div>
                             <p className="text-white text-center fs-16">
                                 <strong>(028) 3931 1234</strong>
@@ -442,7 +491,15 @@ export default function Index() {
                         <div className="col-md-4 col-lg-4 pb-5">
 
                             <div className="h1 text-white text-center">
-                                <img className="img-fluid" src="/assets/img/tuyen-dung/icon_3.png" alt=""/>
+                                <Image
+                                    className="img-fluid"
+                                    src="/assets/img/tuyen-dung/icon_3.png"
+                                    alt="Picture of the author"
+                                    placeholder="blur"
+                                    blurDataURL="/assets/img/tuyen-dung/icon_3.png"
+                                    width={70}
+                                    height={70}
+                                />
                             </div>
                             <p className="text-white text-center fs-16">
                                 <strong> hcns@dkrvholdings.vn</strong>
