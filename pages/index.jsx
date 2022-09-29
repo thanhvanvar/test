@@ -1,34 +1,125 @@
 import React from "react"
+import {useState} from 'react';
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import Swal from "sweetalert2";
+import axios from 'axios';
+
 
 export default function Index() {
+    function MyForm() {
 
+        const [inputs, setInputs] = useState({});
 
+        const handleChange = (event) => {
+            const name = event.target.name;
+            const value = event.target.value;
+            setInputs(values => ({...values, [name]: value}))
+            console.log(value)
+        }
 
+        const handleSubmit = (event) => {
+            event.preventDefault();
+            const data = {
+                name: event.target.name.value,
+                email: event.target.email.value,
+                message: event.target.message.value,
+                phone: event.target.phone.value,
+            }
+            /*alert(inputs);*/
+            /*if (value == undefined) {
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Vui lòng điền'+ name,
+                    icon: 'error',
+                    confirmButtonText: 'Cool'
+                })
+                return false;
+            }*/
+            /*if (inputs.email == undefined) {
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Vui lòng điền email',
+                    icon: 'error',
+                    confirmButtonText: 'Cool'
+                })
+                return false;
+            }
+*/
+            axios.post(`https://script.google.com/macros/s/AKfycbyPpIeyI1YcIOCLeUlkL6qFfUOQwc2fG8wwABcQsnGdH50evHjuAUoRiWwEvtt53-2NGQ/exec`, {data})
+                .then(res => {
+                    console.log(res);
+                })
+        }
+
+        return (
+            <form id="subscribe-form" action="?" onSubmit={handleSubmit}>
+                <div className="row bg_two align-items-stretch">
+                    <div className="col-md-6">
+                        <div className="form-group">
+                            <label htmlFor="name" className="form-label">*Họ tên:</label>
+                            <input className="form-control" id="name" type="text" name="name"
+                                   placeholder="Tên của bạn *"
+                                   onChange={handleChange}/>
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="email" className="form-label">Email:</label>
+                            <input className="form-control" id="email" type="email" name="email"
+                                   placeholder="Email của bạn *"
+                                   onChange={handleChange}/>
+                        </div>
+                        <div className="form-group mb-md-0">
+                            <label htmlFor="message" className="form-label">Vị trí ứng
+                                tuyển:</label>
+                            <input className="form-control" id="message" type="text" name="message"
+                                   placeholder="Vị trí ứng tuyển *"
+                                   onChange={handleChange}/>
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="form-group mb-md-0">
+                            <label htmlFor="phone" className="form-label">*Số điện
+                                thoại:</label>
+                            <input className="form-control" id="phone" type="tel" name="phone"
+                                   placeholder="Số điện thoại của bạn *"
+                                   onChange={handleChange}/>
+                        </div>
+                        <div className="text-center pt-5">
+                            <button className="btn btn-xl text-uppercase btn_1">Tải lên CV</button>
+                            <button className="btn btn-xl text-uppercase btn_2" type="submit">ĐĂNG KÝ</button>
+                        </div>
+                        <div className="text_1">*Hãy trở thành người đồng hành cùng DKRV HOLDINGS</div>
+                    </div>
+                </div>
+            </form>
+        );
+    }
+
+    function SliderList(props) {
+        const listItems = props.url.map((row, index) => (
+            <div className={row.display == 'active' ? "carousel-item active" : "carousel-item"} key={index}>
+                <Image
+                    src={row.src}
+                    alt="Picture of the author"
+                    layout="responsive"
+                    width={1244}
+                    height={700}
+                />
+            </div>
+
+        ))
+        return listItems;
+    }
+
+    const slider_url = [
+        {display: 'active', src: '/assets/img/tuyen-dung/banner-1.png'},
+        {display: '', src: '/assets/img/tuyen-dung/banner-2.png'}
+    ];
     return (
         <>
             <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
                 <div className="carousel-inner">
-                    <div className="carousel-item active">
-                        <Image
-                            src="/assets/img/tuyen-dung/banner-1.png"
-                            alt="Picture of the author"
-                            layout="responsive"
-                            width={1244}
-                            height={700}
-                        />
-                    </div>
-                    <div className="carousel-item">
-                        <Image
-                            src="/assets/img/tuyen-dung/banner-2.png"
-                            alt="Picture of the author"
-                            layout="responsive"
-                            width={1244}
-                            height={700}
-                        />
-
-                    </div>
+                    <SliderList url={slider_url}/>
                 </div>
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
                         data-bs-slide="prev">
@@ -41,6 +132,7 @@ export default function Index() {
                     <span className="visually-hidden">Next</span>
                 </button>
             </div>
+
             <section className="page-section bg_one section_two">
                 <div className="container">
                     <div className="row">
@@ -304,53 +396,7 @@ export default function Index() {
             </section>
             <section className="page-section bg_one section_pd_bottom section_ten" id="contact">
                 <div className="container">
-                    <form id="subscribe-form" action="?">
-                        <div className="row bg_two align-items-stretch">
-                            <div className="col-md-6">
-                                <div className="form-group">
-                                    <label htmlFor="exampleFormControlInput1" className="form-label">*Họ tên:</label>
-                                    <input className="form-control" id="name" type="text" name="name"
-                                           placeholder="Tên của bạn *"/>
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="exampleFormControlInput1" className="form-label">Email:</label>
-                                    <input className="form-control" id="email" type="email" name="email"
-                                           placeholder="Email của bạn *"/>
-                                </div>
-                                <div className="form-group mb-md-0">
-                                    <label htmlFor="exampleFormControlInput1" className="form-label">Vị trí ứng
-                                        tuyển:</label>
-                                    <input className="form-control" id="message" type="text" name="message"
-                                           placeholder="Vị trí ứng tuyển *"/>
-                                </div>
-                            </div>
-                            <div className="col-md-6">
-                                <div className="form-group mb-md-0">
-                                    <label htmlFor="exampleFormControlInput1" className="form-label">*Số điện
-                                        thoại:</label>
-                                    <input className="form-control" id="phone" type="tel" name="phone"
-                                           placeholder="Số điện thoại của bạn *"/>
-                                </div>
-                                <div className="text-center pt-5">
-                                    <button className="btn btn-xl text-uppercase btn_1">Tải lên CV</button>
-                                    <button className="btn btn-xl text-uppercase btn_2" type="submit">ĐĂNG KÝ</button>
-                                </div>
-                                <div className="text_1">*Hãy trở thành người đồng hành cùng DKRV HOLDINGS</div>
-                            </div>
-                        </div>
-                        <div className="d-none" id="submitSuccessMessage">
-                            <div className="text-center text-white mb-3">
-                                <div className="fw-bolder">Form submission successful!</div>
-                                To activate this form, sign up at
-                                <br/>
-                                <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                            </div>
-                        </div>
-                        <div className="d-none" id="submitErrorMessage">
-                            <div className="text-center text-danger mb-3">Error sending message!</div>
-                        </div>
-
-                    </form>
+                    <MyForm/>
                 </div>
             </section>
             <div id="template-mo-zay-hero-carousel2" className="carousel slide" data-bs-ride="carousel">
